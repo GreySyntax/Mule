@@ -57,8 +57,8 @@ static void am_recoveryconnect(struct am_recovery_device *rdev) {
 	
 	printf("[AMDevice] Device Connected in Recovery mode.\r\n");
 	
-	AMRecoveryModeDeviceSetAutoBoot(rdev, CFSTR("1"), 1, 1, 1);
-	AMRecoveryModeDeviceReboot(rdev, CFSTR("1"), 1, 1, 1);
+	AMRecoveryModeDeviceSetAutoBoot(rdev, 1, 1, 1, 1);
+	AMRecoveryModeDeviceReboot(rdev, 1, 1, 1, 1);
 	
 	printf("[AMDevice] Enabled auto-boot.\r\n");
 	
@@ -74,7 +74,7 @@ void am_recoverydisconnect(struct am_recovery_device *rdev) {
 
 int main (int argc, const char * argv[]) {
 	
-	printf("\r\nMule (enterrecovery) - Copyright GreySyntax NSPwn.com 2010\r\n\r\n");
+	printf("\r\nMule (setautoboot) - Copyright GreySyntax NSPwn.com 2010\r\n\r\n");
 	
 	struct am_device_notification *notif;
 	AMDeviceNotificationSubscribe((am_device_notification_callback) am_enterrecovery, 0, 0, 0, &notif);
