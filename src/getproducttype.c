@@ -48,14 +48,6 @@ void am_preformtask(struct am_device_notification_callback_info *info, void *foo
 					CFRelease(pstr2);
 					printf("%s:%s\r\n", value, value2);
 					
-					FILE * f;
-					if ((f = fopen("/tmp/nspwn_device.txt", "w")) != NULL) {
-						fputs(value, f);
-						fputs(":", f);
-						fputs(value2, f);
-						fclose(f);
-					}
-					
 					CFRunLoopStop(CFRunLoopGetCurrent());
 					exit(1);	
 				}
